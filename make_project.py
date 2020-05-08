@@ -37,7 +37,7 @@ def make_executables():
     executable_string = "#"*100 + '\n' + "# Executable declarations\n"
     for executable in "app.cpp unittests/TestApp_unittests.cpp".split():
         executable_string += "add_executable({NAME} {FILE})\n".format(NAME=executable.split('/')[-1].split('.')[0],FILE=executable)
-        executable_string += "target_link_libraries(I{NAME} test_lib)\n".format(NAME=executable.split('/')[-1].split('.')[0])
+        executable_string += "target_link_libraries({NAME} test_lib)\n".format(NAME=executable.split('/')[-1].split('.')[0])
     executable_string += "#"*100 + '\n'
     return executable_string
 
