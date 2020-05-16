@@ -9,7 +9,7 @@ def make_header(project_name):
     file_header += "project({NAME})\n".format(NAME=project_name)
     file_header += "set(CMAKE_CXX_STANDARD 14)\n"
     file_header += "set(CMAKE_CXX_STANDARD_REQUIRED ON)\n"
-    file_header += "set(CMAKE_SHARED_LINKER_FLAGS \"-Wl,--no-as-needed -ldl --enable-kernel=2.6\")\n"
+    file_header += "set(CMAKE_SHARED_LINKER_FLAGS \"-Wl,--no-as-needed -ldl\")\n"
     #file_header +=  "add_compile_options(-fenable-enable-kernel=2.6.32)\n"
     for directory in "src unittests".split():
         file_header += "include_directories({BASE}/{DIR}/)\n".format(
