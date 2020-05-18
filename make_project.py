@@ -22,7 +22,7 @@ def make_file_variables(source_dir):
     file_contents = "#"*100 + "\n# File definitions\n"
     file_name = Utils.make_file_list(glob.glob( os.getcwd()+'/' + source_dir + "/*"))
     file_contents += "set(test_files\n" + "\n\t\t".join(file_name) + "\n)\n"
-    file_contents += "add_library(test_lib ${test_files})\n"
+    file_contents += "add_library(test_lib STATIC ${test_files})\n"
     file_contents += "target_link_libraries(test_lib -static)\n"
     file_contents += "#"*100 + '\n'
     return file_contents
